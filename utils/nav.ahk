@@ -17,6 +17,7 @@ Start() {
                 ClickImage("buttons\next")
             Case "victory_menu":
                 ClickImage("buttons\home_victory", 2000)
+                ClickImage("buttons\home_apopalypse", 1250)
             Case "defeat":
                 ClickImage("buttons\home_defeat_1", 2000)
                 ClickImage("buttons\home_defeat_2", 2000)
@@ -64,6 +65,10 @@ CheckSettings() {
 
 InGame() {
     ClickImage("buttons\ok", 1000, "*Trans0xFF00FF", 900, 720, 1000, 790)
+    ClickImage("buttons\ok_apopalypse", 1000, "*Trans0xFF00FF", 900, 720, 1000, 790)
+    If difficulty = "apopalypse" {
+        Sleep(1000)
+    }
     
     if changeSettings {
         CheckSettings()
