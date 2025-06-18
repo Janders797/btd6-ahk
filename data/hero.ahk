@@ -11,7 +11,7 @@ HERO_SKINS := Map(
     "adora", ["normal", "joan", "void", "shera"],
     "brickell", ["normal", "pirate", "lifeguard"],
     "etienne", ["normal", "etn", "book"],
-    "sauda", ["normal", "viking", "jiangshi"],
+    "sauda", ["normal", "viking", "jiangshi", "red"],
     "psi", ["normal", "psimbals", "dream"],
     "geraldo", ["normal", "gentlemonkey"],
     "corvus", ["normal"],
