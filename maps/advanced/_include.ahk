@@ -18,3 +18,4 @@
 #Include ancient_portal.ahk
 #Include last_resort.ahk
 #Include enchanted_glade.ahk
+#Include sunset_gulch.ahk
