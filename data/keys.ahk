@@ -7,6 +7,7 @@ KEYS := Map(
     "tack",         "{sc013}",
     "ice",          "{sc014}",
     "glue",         "{sc015}",
+    "desperado",    "{sc019}",
 
     "sniper",       "{sc02c}",      ; Military towers
     "sub",          "{sc02d}",
