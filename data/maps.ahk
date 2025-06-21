@@ -6,7 +6,7 @@ global MAPS := [
         ["Middle of the road", MIDDLE_OF_THE_ROAD_DATA],
         ["Spa Pits", SPA_PITS_DATA],
         ["Tinkerton", TINKERTON_DATA],
-        ["Tree Stump", TREE_STUMP_DATA],
+        ["Tree Stump", TREE_STUMP_DATA]
     ],
     
     ; Page 2  - Beginner 
@@ -16,7 +16,7 @@ global MAPS := [
         ["Scrapyard", SCRAPYARD_DATA],
         ["The Cabin", THE_CABIN_DATA],
         ["Resort", RESORT_DATA],
-        ["Skates", SKATES_DATA],
+        ["Skates", SKATES_DATA]
     ],
     
     ; Page 3  - Beginner 
@@ -26,7 +26,7 @@ global MAPS := [
         ["Winter Park", WINTER_PARK_DATA],
         ["Carved", CARVED_DATA],
         ["Park Path", PARK_PATH_DATA],
-        ["Alpine Run", ALPINE_RUN_DATA],
+        ["Alpine Run", ALPINE_RUN_DATA]
     ],
     
     ; Page 4  - Beginner 
@@ -80,36 +80,37 @@ global MAPS := [
     
     ; Page 9  - Advanced
     [
+        ["Sunset Gulch", SUNSET_GULCH_DATA],
         ["Enchanted Glade", ENCHANTED_GLADE_DATA],
         ["Last Resort", LAST_RESORT_DATA],
         ["Ancient Portal", ANCIENT_PORTAL_DATA],
         ["Castle Revenge", CASTLE_REVENGE_DATA],
-        ["Dark Path", DARK_PATH_DATA],
-        ["Erosion", EROSION_DATA],
+        ["Dark Path", DARK_PATH_DATA]
     ],
 
     ; Page 10 - Advanced
     [
+        ["Erosion", EROSION_DATA],
         ["Midnight Mansion", MIDNIGHT_MANSION_DATA],
         ["Sunken Columns", SUNKEN_COLUMNS_DATA],
         ["X Factor", X_FACTOR_DATA],
         ["Mesa", MESA_DATA],
-        ["Geared", GEARED_DATA],
-        ["Spillway", SPILLWAY_DATA],
+        ["Geared", GEARED_DATA]
     ],
     
     ; Page 11 - Advanced
     [
+        ["Spillway", SPILLWAY_DATA],
         ["Cargo", CARGO_DATA],
         ["Pat's Pond", PATS_POND_DATA],
         ["Peninsula", PENINSULA_DATA],
         ["High Finance", HIGH_FINANCE_DATA],
-        ["Another Brick", ANOTHER_BRICK_DATA],
-        ["Off the Coast", OFF_THE_COAST_DATA],
+        ["Another Brick", ANOTHER_BRICK_DATA]
     ],
 
     ; Page 12 - Advanced
     [
+        ["Off the Coast", OFF_THE_COAST_DATA],
         ["Cornfield", CORNFIELD_DATA],
         ["Underground", UNDERGROUND_DATA]
     ],
