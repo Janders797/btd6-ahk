@@ -20,3 +20,5 @@ enableInstaScreenshot := IniRead("config.ini", "settings", "enableInstaScreensho
 enableUnlockTier := IniRead("config.ini", "settings", "enableUnlockTier", false) == "true"
 
 enableFreeplayInsta := IniRead("config.ini", "settings", "enableFreeplayInsta", false) == "true"
+
+trainingTower := IniRead("config.ini", "settings", "trainingTower", "none")
