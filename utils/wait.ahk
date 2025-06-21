@@ -97,7 +97,7 @@ CheckPauseMenu() {
     }
 }
 
-WaitForRound(round, delay := 0) {
+WaitForRound(round, delayA := 0, delayB := 0) {
     if defeated {
         return
     }
@@ -106,25 +106,57 @@ WaitForRound(round, delay := 0) {
     if speed_adjust {
         return
     }
-    Loop {
-        UpdateRound()
-        if currentRound >= round {
-            Sleep(delay)
-            break
+    if autoStart != "off" {
+        Loop {
+            UpdateRound()
+            if currentRound >= round {
+                Sleep(delayA)
+                break
+            }
+            if defeated or CheckDefeat() {
+                global defeated := true
+                LogMsg('Found defeat on R' currentRound ' when waiting for R' round '')
+                ScreenRecordDefeat()
+                break
+            }
+            if SearchImage("states\victory") or CheckInstaMonkey() {
+                global defeated := true
+                LogMsg("Found victory on R" currentRound)
+                break
+            }
+            CheckLevelUp()
+            CheckInGameMsg()
         }
-        if defeated or CheckDefeat() {
-            global defeated := true
-            LogMsg('Found defeat on R' currentRound ' when waiting for R' round '')
-            ScreenRecordDefeat()
-            break
+    } else {
+        Loop {
+            if !paused {
+                WaitForRoundEnd(delayB)
+            }
+            if !defeated {
+                Send(KEYS["play"])
+                global paused := false
+                global currentRound := currentRound + 1
+                if currentRound >= round {
+                    Sleep(delayA)
+                    break
+                }
+            }
+            if defeated or CheckDefeat() {
+                global defeated := true
+                LogMsg('Found defeat on R' currentRound ' when waiting for R' round '')
+                ScreenRecordDefeat()
+                break
+            }
+            if SearchImage("states\victory") or CheckInstaMonkey() {
+                global defeated := true
+                LogMsg("Found victory on R" currentRound)
+                break
+            }
+            CheckLevelUp()
+            CheckInGameMsg()
+            Sleep(200)
+            WaitForRoundEnd(delayB)
         }
-        if SearchImage("states\victory") or CheckInstaMonkey() {
-            global defeated := true
-            LogMsg("Found victory on R" currentRound)
-            break
-        }
-        CheckLevelUp()
-        CheckInGameMsg()
     }
 }
 
@@ -310,4 +342,39 @@ WaitForFreeplayInsta() {
         UpdateRound()
         Sleep(2000)
     }
+}
+
+WaitForRoundEnd(delay := 0) {
+    if defeated {
+        return
+    }
+    Loop {
+        if SearchImage("buttons\paused", "") {
+            if !paused {
+                Sleep(delay)
+            }
+            global paused := true
+            break
+        }
+        if CheckDefeat() {
+            break
+        }
+        if SearchImage("states\victory") or CheckInstaMonkey() {
+            break
+        }
+        CheckLevelUp()
+        CheckInGameMsg()
+    }
+}
+
+EndOfRound(round, delayA := 0, delayB := 0) {
+    if defeated {
+        return
+    }
+    WaitForRound(round, 0, delayA)
+    if autoStart != "off" {
+        SetAutoStart("off")
+    }
+    Sleep(200)
+    WaitForRoundEnd(delayB)
 }

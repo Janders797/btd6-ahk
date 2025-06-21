@@ -16,6 +16,8 @@ allowPowers := powerSettings
 inFreeplay := false
 selectedMode := []
 lastMap := [1, 1]
+autoStart := "unknown"
+paused := ""
 windowName := "BloonsTD6"
 
 states := [

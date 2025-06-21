@@ -58,6 +58,7 @@ CheckSettings() {
     }
     LogMsg("Quick settings checked")
     global changeSettings := false
+    global autoStart := "on"
     Send("{Esc}")
     Sleep(1500)
     return
@@ -72,6 +73,9 @@ InGame() {
     
     if changeSettings {
         CheckSettings()
+    }
+    if difficulty != "apopalypse" and autoStart ="off" {
+        SetAutoStart("on")
     }
     if currentMap[1] == 0 or currentMap[2] == 0 {
         Todo()
@@ -176,5 +180,28 @@ CollectAchievements() {
         LogMsg("Home | No Achievements to collect detected", true)
         Sleep(300)
         return
+    }
+}
+
+SetAutoStart(state) {
+    if defeated {
+        return
+    }
+    if autoStart != state{
+        Send("{Esc}")
+        Sleep(1500)
+        if state = "on" {
+            ClickImage("buttons\auto_start")
+            LogMsg("Enabled auto start")
+            global autoStart := "on"
+        }
+        if state = "off" {
+            ClickImage("buttons\auto_start_on")
+            LogMsg("Disables auto start")
+            global autoStart := "off"
+        }
+        Send("{Esc}")
+        Sleep(1500)
+    return
     }
 }
