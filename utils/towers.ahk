@@ -348,3 +348,44 @@ UnlockTier(path, asap) {
     }
     LogMsg("UnlockTier() complete", true)
 }
+
+TowerHasCoords(towerName, towerMap := TS) {
+    ; Check if the passed tower name is in the tower Map
+    if !towerMap.Has(towerName) {
+        LogMsg(A_ThisFunc "() | false - tower not found in tower Map. tower: " towerName, true) 
+        return false
+    }
+
+    ; Make sure the tower values are an array of at least 2 elements
+    if towerMap[towerName].Length < 2 {
+        LogMsg(A_ThisFunc "() | false - tower array is less than 2 elements. it should contain exactly 2. tower: " towerName " ", true)
+        return false
+    }
+
+    coords := towerMap[towerName][2]
+
+    ; Make sure the coords are an array
+    if Type(coords) != "Array"{
+        LogMsg(A_ThisFunc "() | false - second element in the tower array is a(n) " Type(coords) " when it should be an array. tower: " towerName, true)
+        return false
+    }
+
+    ; Make sure the coords array has exactly 2 elements
+    if coords.Length != 2 {
+        LogMsg(A_ThisFunc "() | false - coord array empty or incorrect size. tower: " towerName, true)
+        return false
+    }
+
+    LogMsg(A_ThisFunc "() | true - tower: " towerName " has coords: " coords[1] ", " coords[2], true)
+    return true
+}
+
+AbilityTarget(tower) {
+    if defeated {
+        return
+    }
+    global x := TS[tower][2][1], y := TS[tower][2][2], toweropen := tower
+
+    Click(x,y)
+    Sleep(100)
+}
