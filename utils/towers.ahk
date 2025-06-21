@@ -127,12 +127,23 @@ Remove(x, y, confirmx := 950, confirmy := 620) {
 
 GetRandom(ground_position, water_position) {
     allTowers := [
-        "dart","boomer","bomb","tack","ice","glue","desperado",
+        "dart","boomer","bomb","tack","ice","glue", "desperado",
         "sniper","sub","boat","ace","heli","mortar","dartling",
         "wizard","super","ninja","alch","druid", "mermonkey",
         "spike","village","engineer","beast"
     ]
-    tower := allTowers[Random(1, allTowers.Length)]
+    found := false
+    for towerName in allTowers {
+        if (towerName = trainingTower) {
+            found := true
+            break
+        }
+    }
+    if (trainingTower != "" && found) {
+        tower := trainingTower
+    } else {
+        tower := allTowers[Random(1, allTowers.Length)]
+    }
     if tower ~= "sub|boat" {
         return [tower, water_position]
     }
