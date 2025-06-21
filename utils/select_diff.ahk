@@ -113,6 +113,50 @@ SelectHard() {
 }
 
 MapHas(diff) {
-    mapData := MAPS[currentMap[1]][currentMap[2]]
-    return mapData[2].Has(diff)
+    global currentMap
+    page := currentMap[1]
+    pos := currentMap[2]
+    mapData := MAPS[page][pos][2]
+    
+    if !mapData.Has(diff)
+        return false
+    
+    variants := mapData[diff]
+    if Type(variants[1]) = "Func" { ; simple format
+        global selectedMode := variants
+        return CheckModifiersForVariant(variants)
+    }
+    
+    for variant in variants {       ; multiple available maps
+        if CheckModifiersForVariant(variant) {
+            global selectedMode := variant
+            return true
+        }
+    }
+    return false
+}   
+
+CheckModifiersForVariant(variant) {
+    if variant.Length >= 3 {
+        ftReq := variant[3]
+    } else {
+        ftReq := "default"
+    }
+    if variant.Length >= 4 {
+        dcReq := variant[4]
+    } else {
+        dcReq := "default"
+    }
+    return CheckModifiers(ftReq, dcReq)
+}
+
+CheckModifiers(ftReq, dcReq) {
+    if fast_track = "unavailable" {
+        ftStatus := false
+    } else ftStatus := fast_track
+    if double_cash = "unavailable" {
+        dcStatus := false
+    } else dcStatus := double_cash
+    if (ftReq = ftStatus or ftReq = "default") && (dcReq = dcStatus or dcReq = "default")
+        return true
 }

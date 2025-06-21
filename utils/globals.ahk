@@ -14,6 +14,7 @@ fast_track := false
 speed_adjust := false
 allowPowers := powerSettings
 inFreeplay := false
+selectedMode := []
 windowName := "BloonsTD6"
 
 states := [

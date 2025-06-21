@@ -1,9 +1,6 @@
 SelectHero() {
-    mapData := MAPS[currentMap[1]][currentMap[2]]
-    if not mapData[2].Has(difficulty) {
-        return
-    }
-    hero := mapData[2][difficulty][2]
+    mapData := selectedMode
+    hero := mapData[2]
     if hero == "" {
         return
     }

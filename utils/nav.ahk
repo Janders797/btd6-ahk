@@ -82,7 +82,7 @@ InGame() {
         if fast_track {
             global currentRound := STARTING_ROUNDS_FT[difficulty]
         } else global currentRound := STARTING_ROUNDS[difficulty]
-        mapData[2][difficulty][1]()
+        selectedMode[1]()
     } else {
         Todo()
     }
@@ -102,6 +102,8 @@ InGame() {
     global speed_adjust := false
     global allowPowers := powerSettings
     global inFreeplay := false
+    global fast_track := false
+    global selectedMode := []
 }
 
 OpenBoxes() {
