@@ -15,6 +15,7 @@ speed_adjust := false
 allowPowers := powerSettings
 inFreeplay := false
 selectedMode := []
+lastMap := [1, 1]
 windowName := "BloonsTD6"
 
 states := [

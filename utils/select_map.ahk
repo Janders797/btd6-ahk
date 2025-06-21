@@ -3,7 +3,11 @@ MAP_COORDS := [[444, 280], [878, 280], [1289, 280], [444, 590], [878, 590], [128
 MapSelection() {
     CheckFastTrack()
     CheckDoubleCash()
-    if mapSelect = "unlock" {
+    if mapSelect = "medals" {
+        NextMedal := NextMedalMap()
+        SelectMap(NextMedal[1], NextMedal[2])
+    }
+    else if mapSelect = "unlock" {
         SelectNextMap()
     } else if MAP_LOCATIONS.Has(mapSelect) {
         SelectMap(MAP_LOCATIONS[mapSelect][1], MAP_LOCATIONS[mapSelect][2])
@@ -13,6 +17,7 @@ MapSelection() {
         SelectRandomMap()
     }
     LogMsg("Selected map: " MAPS[currentMap[1]][currentMap[2]][1])
+    global lastMap := currentMap
     SelectDifficulty()
     CheckOwerwrite()
     Sleep(5000)
@@ -26,11 +31,11 @@ SelectNextMap() {
 SelectRandomMap() {
     Switch mapCategory {
         Case "beginner":
-            SelectMap(1, Random(1, 23))
+            SelectMap(1, Random(1, 24))
         Case "intermediate":
             SelectMap(5, Random(1, 23))
         Case "advanced":
-            SelectMap(9, Random(1, 19))
+            SelectMap(9, Random(1, 20))
         Case "expert":
             SelectMap(13, Random(1, 12))
         Default:
@@ -51,7 +56,6 @@ SelectEventMap() {
         }
     }
 }
-
 
 SelectMap(page, number) {
     page := page + (number - 1) // 6
@@ -88,7 +92,6 @@ GoToPage(page) {
         }
     }
 }
-
 
 CheckFastTrack() {
     if SearchImage("buttons\fast_track") {

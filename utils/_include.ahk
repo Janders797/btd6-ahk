@@ -10,3 +10,4 @@
 #Include select_diff.ahk
 #Include select_hero.ahk
 #Include geraldo.ahk
+#Include medals.ahk
