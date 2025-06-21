@@ -4,6 +4,7 @@
 #Include hard.ahk
 #Include alternate.ahk
 #Include impoppable.ahk
+#Include ftdc_impoppable.ahk
 #Include chimps.ahk
 
 DARK_CASTLE_DATA := Map(
@@ -12,6 +13,9 @@ DARK_CASTLE_DATA := Map(
     "deflation", [DarkCastleDeflation, "quincy"],
     "hard", [DarkCastleHard, ""],
     "alternate", [DarkCastleAlternate, "benjamin"],
-    "impoppable", [DarkCastleImpoppable, "benjamin"],
+    "impoppable", [
+        [DarkCastleImpoppable, "benjamin", false],
+        [DarkCastleImpoppableFTDC, "benjamin", true, true],
+    ],
     "chimps", [DarkCastleChimps, "obyn"]
 )
