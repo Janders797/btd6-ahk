@@ -25,7 +25,7 @@ DarkCastleImpoppable() {
         "VillageB", ["village", [848, 771]],
     )
     
-    CheckDoubleCash()
+    DoubleCash()
 
     Place("DartA", true)
     Targeting("DartA", 3)                          ; First -> Strong

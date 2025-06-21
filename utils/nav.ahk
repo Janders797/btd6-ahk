@@ -77,9 +77,11 @@ InGame() {
         Todo()
         return
     }
-    global currentRound := STARTING_ROUNDS[difficulty]
     mapData := MAPS[currentMap[1]][currentMap[2]]
     if mapData[2].Has(difficulty) {
+        if fast_track {
+            global currentRound := STARTING_ROUNDS_FT[difficulty]
+        } else global currentRound := STARTING_ROUNDS[difficulty]
         mapData[2][difficulty][1]()
     } else {
         Todo()

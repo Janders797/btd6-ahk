@@ -56,10 +56,8 @@ SearchUpgrade(path) {
     }
 }
 
-CheckDoubleCash(speed := true, power := "unchanged") {
-    if SearchImage("states\double_cash", "*TransBlack", 280, 40, 350, 90) {
-        LogMsg("Double Cash detected")
-        global double_cash := true
+DoubleCash(speed := true, power := "unchanged") {
+    if double_cash {
         global speed_adjust := speed
         if power != "unchanged" {
             global allowPowers := power

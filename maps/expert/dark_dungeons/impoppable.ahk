@@ -29,7 +29,7 @@ DarkDungeonsImpoppable() {
         "Village C", ["village", [989, 570]],
     )
 
-    CheckDoubleCash()
+    DoubleCash()
 
     Place("Dart A", true)
     Place("Dart B", true)

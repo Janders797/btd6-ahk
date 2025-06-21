@@ -27,7 +27,7 @@ QuadImpoppable() {
         "Village B", ["village", [1056, 417]],
     )
     
-    CheckDoubleCash()
+    DoubleCash()
     
     UpdateMouseRest("Farm A")               ; Hover Farm A
 

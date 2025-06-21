@@ -30,7 +30,7 @@ BloodyPuddlesImpoppable() {
         "Village B", ["village", [1020, 271]],
     )
 
-    CheckDoubleCash()
+    DoubleCash()
     
     UpdateMouseRest("Farm A")
 

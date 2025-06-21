@@ -22,7 +22,7 @@ MuddyPuddlesImpoppable() {
         "Village C", ["village", [851, 769]],
     )
 
-    CheckDoubleCash()
+    DoubleCash()
     
     Place("Dart A", true)
     Place("Sub A", true)

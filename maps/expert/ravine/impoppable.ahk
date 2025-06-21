@@ -28,7 +28,7 @@ RavineImpoppable() {
         "Village E", ["village", [738, 286]],
     )
 
-    CheckDoubleCash()
+    DoubleCash()
     Place("Dart A", true)
     Targeting("Dart A", 3)                          ; First -> Strong
     Place("Dart B", true)

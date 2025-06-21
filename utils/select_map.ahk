@@ -1,6 +1,8 @@
 MAP_COORDS := [[444, 280], [878, 280], [1289, 280], [444, 590], [878, 590], [1289, 590]]
 
 MapSelection() {
+    CheckFastTrack()
+    CheckDoubleCash()
     if mapSelect = "unlock" {
         SelectNextMap()
     } else if MAP_LOCATIONS.Has(mapSelect) {
@@ -50,21 +52,11 @@ SelectEventMap() {
     }
 }
 
+
 SelectMap(page, number) {
     page := page + (number - 1) // 6
     number := Mod(number - 1, 6) + 1
-    While GetCurrentMapPage() != page {
-        Switch page {
-            Case 1,2,3,4:
-                ClickImage("buttons\beginner")
-            Case 5,6,7,8:
-                ClickImage("buttons\intermediate")
-            Case 9,10,11,12:
-                ClickImage("buttons\advanced")
-            Case 13,14:
-                ClickImage("buttons\expert")
-        }
-    }
+    GoToPage(page)
     Click(MAP_COORDS[number][1], MAP_COORDS[number][2])
     currentMap[2] := number
     currentMap[1] := page
@@ -80,4 +72,36 @@ CheckOwerwrite() {
             Reload()
         }
     }
+}
+
+GoToPage(page) {
+    While GetCurrentMapPage() != page {
+        Switch page {
+            Case 1,2,3,4:
+                ClickImage("buttons\beginner")
+            Case 5,6,7,8:
+                ClickImage("buttons\intermediate")
+            Case 9,10,11,12:
+                ClickImage("buttons\advanced")
+            Case 13,14:
+                ClickImage("buttons\expert")
+        }
+    }
+}
+
+
+CheckFastTrack() {
+    if SearchImage("buttons\fast_track") {
+        global fast_track := true
+    } else if SearchImage("buttons\fast_track_off") {
+        global fast_track := false
+    } else fast_track := "unavailable"
+}
+
+CheckDoubleCash() {
+    if SearchImage("buttons\double_cash") {
+        global double_cash := true
+    } else if SearchImage("buttons\double_cash_off") {
+        global double_cash := false
+    } else double_cash := "unavailable"
 }

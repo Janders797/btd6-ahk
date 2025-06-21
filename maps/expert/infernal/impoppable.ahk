@@ -18,7 +18,7 @@ InfernalImpoppable() {
         "Village A", ["village", [90, 658]],
     )
     UpdateMouseRest("Farm A")
-    CheckDoubleCash()
+    DoubleCash()
 
     Place("Dart A")
     Place("Sub A")

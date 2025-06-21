@@ -10,6 +10,7 @@ toweropen := ""
 menuside := ""
 shopopen := false
 double_cash := false
+fast_track := false
 speed_adjust := false
 allowPowers := powerSettings
 inFreeplay := false

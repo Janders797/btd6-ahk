@@ -27,7 +27,7 @@ WorkshopImpoppable() {
         "Wizard A", ["wizard", [1019, 479]],
     )
     
-    CheckDoubleCash()
+    DoubleCash()
 
     Place("Dart A")
     Place("Dart B")

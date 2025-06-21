@@ -18,7 +18,7 @@ FloodedValleyImpoppable() {
         "Wizard A", ["wizard", [754, 530]],
     )
 
-    CheckDoubleCash()
+    DoubleCash()
     
     Place("Sub A", true)
     
