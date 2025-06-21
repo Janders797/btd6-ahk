@@ -44,3 +44,48 @@ GearedEasy() {
     Place("Sniper F")
     Upgrade("Sniper F", 0, 2, 2)    ; 000 -> 022
 }
+
+GearedEasyFT() {
+    global TS := Map(
+        "Sniper A", ["sniper", [579, 392]],
+        "Sniper A 2", ["", [1085, 398]],
+        "Sniper A 3", ["sniper", [474, 627]],
+        "Sniper B", ["sniper", [1087, 856]],
+        "Sniper B 2", ["", [1085, 398]],
+        "Sniper C", ["sniper", [1085, 398]],
+        "Sniper C 2", ["", [579, 392]],
+        "Sniper D", ["sniper", [474, 627]],
+        "Sniper E", ["sniper", [474, 627]],
+        "Sniper F", ["sniper", [474, 627]]
+    )
+
+    Place("Sniper A")
+    Place("Sniper B")
+    Place("Sniper C")
+
+    StartGame()
+    Upgrade("Sniper B", 0, 2, 1, true)      ; 000 -> 021
+
+    WaitForRound(16, 1000)
+    Upgrade("Sniper B 2", 0, 0, 1, true)    ; 021 -> 022
+    Upgrade("Sniper C 2", 0, 2, 2, true)    ; 000 -> 022
+
+    WaitForRound(28, 1000)
+    Targeting("Sniper A 2", 3)              ; First -> Strong
+    Upgrade("Sniper A 2", 2, 0, 2, true)    ; 000 -> 202
+
+    WaitForRound(33, 1000)
+    Upgrade("Sniper A 3", 1, 0, 0, true)      ; 202 -> 302
+
+    WaitForRound(35, 1000)
+    Place("Sniper D", true)
+    Upgrade("Sniper D", 0, 2, 2, true)      ; 000 -> 022
+
+    WaitForRound(36, 1000)
+    Place("Sniper E", true)
+    Upgrade("Sniper E", 0, 2, 2, true)      ; 000 -> 022
+
+    WaitForRound(38, 1000)
+    Place("Sniper F", true)
+    Upgrade("Sniper F", 0, 2, 2, true)      ; 000 -> 022
+}
