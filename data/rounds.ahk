@@ -14,3 +14,20 @@ STARTING_ROUNDS := Map(
     "impoppable", 6,
     "chimps", 6,
 )
+
+STARTING_ROUNDS_FT := Map(
+    "easy", 10,
+    "primary", 10,
+    "deflation", 30,
+    "medium", 15,
+    "military", 15,
+    "apopalypse", 15,
+    "reverse", 15,
+    "hard", 22,
+    "magic", 22,
+    "double_hp", 22,
+    "half_cash", 22,
+    "alternate", 22,
+    "impoppable", 29,
+    "chimps", 6,
+)

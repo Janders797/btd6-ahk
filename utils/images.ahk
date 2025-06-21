@@ -18,10 +18,19 @@ SearchRound(round) {
     if round != 7 and SearchRound(7) {
         return false
     }
-    if menuside = "R" {
-        roundDetected := ImageSearch(&xCoord, &yCoord, 1040, 21, 1115, 80, "*8 *TransBlack " A_ScriptDir "\img\rounds\" round ".png")
+    if inFreeplay {
+        if menuside = "R" {
+            roundDetected := ImageSearch(&xCoord, &yCoord, 1135, 21, 1208, 80, "*8 *TransBlack " A_ScriptDir "\img\rounds\freeplay\" round ".png")
+        } else {
+            roundDetected := ImageSearch(&xCoord, &yCoord, 1530, 21, 1605, 80, "*8 *TransBlack " A_ScriptDir "\img\rounds\freeplay\" round ".png")
+        }
+
     } else {
-        roundDetected := ImageSearch(&xCoord, &yCoord, 1413, 21, 1520, 80, "*8 *TransBlack " A_ScriptDir "\img\rounds\" round ".png")
+        if menuside = "R" {
+            roundDetected := ImageSearch(&xCoord, &yCoord, 1040, 21, 1115, 80, "*8 *TransBlack " A_ScriptDir "\img\rounds\" round ".png")
+        } else {
+            roundDetected := ImageSearch(&xCoord, &yCoord, 1413, 21, 1520, 80, "*8 *TransBlack " A_ScriptDir "\img\rounds\" round ".png")
+        }
     }
     return roundDetected
 }
