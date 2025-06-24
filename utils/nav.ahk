@@ -115,7 +115,7 @@ OpenBoxes() {
     ClickImage("buttons\collect", 2000)
     LogMsg("Opening boxes")
     While !SearchImage("states\event") {
-        for coords in ["683,535","900,550","897,535","900,550","1190,535","900,550","950,930"] {
+        for coords in ["683,535","900,685","897,535","900,685","1190,535","900,685","950,930"] {
             Click(coords)
             Sleep(1000)
         }
