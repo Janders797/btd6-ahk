@@ -62,8 +62,8 @@ MuddyPuddlesImpoppableFTDC() {
     Place("Sub B", true)
     Place("Ninja A", true)
     Place("Ninja B", true)
-    Upgrade("Sub B", 2, 0, 0, true)     ; 005 -> 205
-    Upgrade("Sub B", 2, 0, 5, true)     ; 000 -> 005
+    Upgrade("Sub A", 2, 0, 0, true)     ; 050 -> 250
+    Upgrade("Sub B", 2, 0, 5, true)     ; 000 -> 205
     Place("Spike", true)
     Upgrade("Spike", 2, 5, 0, true)     ; 000 -> 250
     Upgrade("Village B", 0, 1, 0, true) ; 022 -> 032

@@ -17,7 +17,7 @@ QuadImpoppableFTDC() {
         "Ninja B", ["ninja", [930, 80]],
         "Ninja C", ["ninja", [1480, 630]],
         "Ninja D", ["ninja", [720, 980]],
-        "Spike", ["spike", [955, 403]]
+        "Spike", ["spike", [943, 396]]
     )
 
     Place("Village A")
