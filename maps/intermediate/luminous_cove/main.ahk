@@ -1,6 +1,7 @@
 #Include easy.ahk
 #Include primary.ahk
 #Include impoppable.ahk
+#Include chimps.ahk
 #Include ftdc.ahk
 
 LUMINOUS_COVE_DATA := Map(
@@ -46,4 +47,5 @@ LUMINOUS_COVE_DATA := Map(
         [LuminousCoveImpoppable, "benjamin", false],
         [LuminousCoveFTDC, "psi", true, true],
     ],
+    "chimps", [LuminousCoveChimps, "sauda"],
 )
