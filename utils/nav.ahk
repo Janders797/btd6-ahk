@@ -83,9 +83,11 @@ InGame() {
     }
     mapData := MAPS[currentMap[1]][currentMap[2]]
     if mapData[2].Has(difficulty) {
-        if fast_track {
+        if fast_track and fast_track != "unavailable" {
             global currentRound := STARTING_ROUNDS_FT[difficulty]
-        } else global currentRound := STARTING_ROUNDS[difficulty]
+        } else {
+            global currentRound := STARTING_ROUNDS[difficulty]
+        }
         selectedMode[1]()
     } else {
         Todo()

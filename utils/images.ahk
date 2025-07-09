@@ -57,7 +57,7 @@ SearchUpgrade(path) {
 }
 
 DoubleCash(speed := true, power := "unchanged") {
-    if double_cash {
+    if double_cash and double_cash != "unavailable" {
         global speed_adjust := speed
         if power != "unchanged" {
             global allowPowers := power
