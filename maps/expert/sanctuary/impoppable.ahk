@@ -210,12 +210,6 @@ SanctuaryImpoppable() {
     UpdateMouseRest("Sniper C 1")           ; hover Elite Sniper
     Ability("Sniper C 1", "2", "3")
 
-    WaitForRound(90, 200)
-    Sell("Village A 2")
-    Sleep(100)
-    Place("Village A 2", true)
-    Upgrade("Village A 2", 2, 3, 0, true)   ; 000 -> 230
-
     WaitForRound(91, 200)
     Upgrade("Boat A 3", 1, 0, 0, true)      ; 420 -> 520
     Place("Village B 3", true)
@@ -231,4 +225,10 @@ SanctuaryImpoppable() {
     Ability("Sniper C 5", "2", "3")
     Place("Spike A 1", true)            
     Upgrade("Spike A 1", 2, 5, 0, true)     ; 000 -> 250
+
+    WaitForRound(96, 200)
+    Sell("Village A 2")
+    Sleep(100)
+    Place("Village A 2", true)
+    Upgrade("Village A 2", 2, 3, 0, true)   ; 000 -> 230
 }
