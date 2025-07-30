@@ -113,6 +113,7 @@ WaitForRound(round, delayA := 0, delayB := 0) {
                 Sleep(delayA)
                 break
             }
+            StartRoundAfterPause()
             if defeated or CheckDefeat() {
                 global defeated := true
                 LogMsg('Found defeat on R' currentRound ' when waiting for R' round '')
@@ -133,9 +134,11 @@ WaitForRound(round, delayA := 0, delayB := 0) {
                 WaitForRoundEnd(delayB)
             }
             if !defeated {
-                Send(KEYS["play"])
-                global paused := false
-                global currentRound := currentRound + 1
+                if currentRound >= round {
+                    Sleep(delayA)
+                    break
+                }
+                StartRoundAfterPause()
                 if currentRound >= round {
                     Sleep(delayA)
                     break
@@ -184,6 +187,7 @@ WaitForVictoryOrDefeat() {
         CheckLevelUp()
         CheckInGameMsg()
         UpdateRound()
+        StartRoundAfterPause()
         Sleep(2000)
     }
 }
@@ -215,6 +219,7 @@ WaitForUpgrade(path) {
         CheckLevelUp()
         CheckInGameMsg()
         UpdateRound()
+        StartRoundAfterPause()
     }
 }
 
@@ -242,10 +247,15 @@ WaitForAbility(tower, ability, position, delay := 0) {
         CheckLevelUp()
         CheckInGameMsg()
         UpdateRound()
+        StartRoundAfterPause()
     }
 }
 
 UpdateRound() {
+    if SearchImage("buttons\paused", "") {
+        global paused := true
+    }
+    
     if SearchRound(Mod(currentRound, 10)) {
         return
     }
@@ -307,6 +317,7 @@ StartFreePlay() {
         }
         CheckInGameMsg()
         UpdateRound()
+        StartRoundAfterPause()
         Sleep(2000)
     }
 }
@@ -340,6 +351,7 @@ WaitForFreeplayInsta() {
         CheckLevelUp()
         CheckInGameMsg()
         UpdateRound()
+        StartRoundAfterPause()
         Sleep(2000)
     }
 }
@@ -377,4 +389,15 @@ EndOfRound(round, delayA := 0, delayB := 0) {
     }
     Sleep(200)
     WaitForRoundEnd(delayB)
+}
+
+StartRoundAfterPause() {
+    if defeated {
+        return
+    }
+    if paused {
+        Send(KEYS["play"])
+        global paused := false
+        global currentRound := currentRound + 1
+    }
 }
