@@ -15,6 +15,20 @@ ChangeHero(hero) {
     ClickImage("hero\change")
 
     pos := HERO_POSITIONS[hero]
+    if pos > 14 {
+        MouseMove(260, 400)
+            Sleep(100)
+        loop {
+        loop 4 {
+            Send("{Wheeldown}")
+            Sleep(100)
+        }
+        pos := pos-3
+        if pos < 15 {
+            break
+        }
+        }
+    }
     Click(103 + 151 * Mod(pos, 3), 222 + 192 * (pos // 3))
     Sleep(1000)
     ClickImage("hero\select")

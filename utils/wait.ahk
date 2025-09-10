@@ -14,7 +14,7 @@ UpdateMouseRest(towers*) {
 }
 
 CheckLevelUp() {
-    if SearchImage("states\level_up", , 982, 537, 1084, 603) {
+    if SearchImage("states\level_up") {
         global toweropen
         okMsg := false
 
@@ -252,7 +252,7 @@ WaitForAbility(tower, ability, position, delay := 0) {
 }
 
 UpdateRound() {
-    if SearchImage("buttons\paused", "") {
+    if autoStart = "off" and SearchImage("buttons\paused", "") {
         global paused := true
     }
     

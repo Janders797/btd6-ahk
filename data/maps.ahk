@@ -6,7 +6,7 @@ global MAPS := [
         ["Middle of the road", MIDDLE_OF_THE_ROAD_DATA],
         ["Spa Pits", SPA_PITS_DATA],
         ["Tinkerton", TINKERTON_DATA],
-        ["Tree Stump", TREE_STUMP_DATA]
+        ["Tree Stump", TREE_STUMP_DATA],
     ],
     
     ; Page 2  - Beginner 
@@ -16,7 +16,7 @@ global MAPS := [
         ["Scrapyard", SCRAPYARD_DATA],
         ["The Cabin", THE_CABIN_DATA],
         ["Resort", RESORT_DATA],
-        ["Skates", SKATES_DATA]
+        ["Skates", SKATES_DATA],
     ],
     
     ; Page 3  - Beginner 
@@ -26,7 +26,7 @@ global MAPS := [
         ["Winter Park", WINTER_PARK_DATA],
         ["Carved", CARVED_DATA],
         ["Park Path", PARK_PATH_DATA],
-        ["Alpine Run", ALPINE_RUN_DATA]
+        ["Alpine Run", ALPINE_RUN_DATA],
     ],
     
     ; Page 4  - Beginner 
@@ -36,46 +36,47 @@ global MAPS := [
         ["Four Circles", FOUR_CIRCLES_DATA],
         ["Hedge", HEDGE_DATA],
         ["End of the Road", END_OF_THE_ROAD_DATA],
-        ["Logs", LOGS_DATA]
+        ["Logs", LOGS_DATA],
     ],
     
     ; Page 5  - Intermediate 
     [
+        ["Lost Crevasse", LOST_CREVASSE_DATA],
         ["Luminous Cove", LUMINOUS_COVE_DATA],
         ["Sulfur Springs", SULFUR_SPRINGS_DATA],
         ["Water Park", WATER_PARK_DATA],
         ["Polyphemus", POLYPHEMUS_DATA],
         ["Covered Garden", COVERED_GARDEN_DATA],
-        ["Quarry", QUARRY_DATA]
     ],
 
     ; Page 6  - Intermediate
     [
+        ["Quarry", QUARRY_DATA],
         ["Quiet Street", QUIET_STREET_DATA],
         ["Bloonarius Prime", BLOONARIUS_PRIME_DATA],
         ["Balance", BALANCE_DATA],
         ["Encrypted", ENCRYPTED_DATA],
         ["Bazaar", BAZAAR_DATA],
-        ["Adora's Temple", ADORAS_TEMPLE_DATA]
     ],
 
     ; Page 7  - Intermediate
     [
+        ["Adora's Temple", ADORAS_TEMPLE_DATA],
         ["Spring Spring", SPRING_SRPING_DATA],
         ["KartsNDarts", KARTSNDARTS_DATA],
         ["Moon Landing", MOON_LANDING_DATA],
         ["Haunted", HAUNTED_DATA],
         ["Downstream", DOWNSTREAM_DATA],
-        ["Firing Range", FIRING_RANGE_DATA]
     ],
 
     ; Page 8  - Intermediate
     [
+        ["Firing Range", FIRING_RANGE_DATA],
         ["Cracked", CRACKED_DATA],
         ["Streambed", STREAMBED_DATA],
         ["Chutes", CHUTES_DATA],
         ["Rake", RAKE_DATA],
-        ["Spice Islands", SPICE_ISLANDS_DATA]
+        ["Spice Islands", SPICE_ISLANDS_DATA],
     ],
     
     ; Page 9  - Advanced
@@ -85,7 +86,7 @@ global MAPS := [
         ["Last Resort", LAST_RESORT_DATA],
         ["Ancient Portal", ANCIENT_PORTAL_DATA],
         ["Castle Revenge", CASTLE_REVENGE_DATA],
-        ["Dark Path", DARK_PATH_DATA]
+        ["Dark Path", DARK_PATH_DATA],
     ],
 
     ; Page 10 - Advanced
@@ -95,7 +96,7 @@ global MAPS := [
         ["Sunken Columns", SUNKEN_COLUMNS_DATA],
         ["X Factor", X_FACTOR_DATA],
         ["Mesa", MESA_DATA],
-        ["Geared", GEARED_DATA]
+        ["Geared", GEARED_DATA],
     ],
     
     ; Page 11 - Advanced
@@ -105,14 +106,14 @@ global MAPS := [
         ["Pat's Pond", PATS_POND_DATA],
         ["Peninsula", PENINSULA_DATA],
         ["High Finance", HIGH_FINANCE_DATA],
-        ["Another Brick", ANOTHER_BRICK_DATA]
+        ["Another Brick", ANOTHER_BRICK_DATA],
     ],
 
     ; Page 12 - Advanced
     [
         ["Off the Coast", OFF_THE_COAST_DATA],
         ["Cornfield", CORNFIELD_DATA],
-        ["Underground", UNDERGROUND_DATA]
+        ["Underground", UNDERGROUND_DATA],
     ],
 
     ; Page 13 - Expert
@@ -122,7 +123,7 @@ global MAPS := [
         ["Sanctuary", SANCTUARY_DATA],
         ["Ravine", RAVINE_DATA],
         ["Flooded Valley", FLOODED_VALLEY_DATA],
-        ["Infernal", INFERNAL_DATA]
+        ["Infernal", INFERNAL_DATA],
     ],
 
     ; Page 14 - Expert
@@ -132,7 +133,7 @@ global MAPS := [
         ["Quad", QUAD_DATA],
         ["Dark Castle", DARK_CASTLE_DATA],
         ["Muddy Puddles", MUDDY_PUDDLES_DATA],
-        ["#Ouch", OUCH_DATA]
+        ["#Ouch", OUCH_DATA],
     ]
 ]
 
