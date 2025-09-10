@@ -21,3 +21,4 @@
 #Include rake\main.ahk
 #Include spice_islands\main.ahk
 #Include luminous_cove\main.ahk
+#Include lost_crevasse\main.ahk
