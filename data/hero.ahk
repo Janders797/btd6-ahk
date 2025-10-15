@@ -2,7 +2,7 @@ HERO_SKINS := Map(
     "quincy", ["normal", "cyber", "wolfpack"],
     "gwendolin", ["normal", "scientist", "harlegwen"],
     "striker_jones", ["normal", "biker", "octo"],
-    "obyn", ["normal", "ocean", "mountain"],
+    "obyn", ["normal", "ocean", "mountain", "skeletor"],
     "silas", ["normal"],
     "benjamin", ["normal", "dj", "sushi"],
     "pat", ["normal", "snowman", "kaiju"],

@@ -31,13 +31,13 @@ SelectNextMap() {
 SelectRandomMap() {
     Switch mapCategory {
         Case "beginner":
-            SelectMap(1, Random(1, 24))
+            SelectMap(1, Random(1, 25))
         Case "intermediate":
-            SelectMap(5, Random(1, 23))
+            SelectMap(6, Random(1, 24))
         Case "advanced":
-            SelectMap(9, Random(1, 20))
+            SelectMap(10, Random(1, 21))
         Case "expert":
-            SelectMap(13, Random(1, 12))
+            SelectMap(14, Random(1, 12))
         Default:
             randomMap := ALL_MAPS[Random(1, ALL_MAPS.Length)]
             SelectMap(randomMap[1], randomMap[2])
@@ -81,13 +81,13 @@ CheckOwerwrite() {
 GoToPage(page) {
     While GetCurrentMapPage() != page {
         Switch page {
-            Case 1,2,3,4:
+            Case 1,2,3,4,5:
                 ClickImage("buttons\beginner")
-            Case 5,6,7,8:
+            Case 6,7,8,9:
                 ClickImage("buttons\intermediate")
-            Case 9,10,11,12:
+            Case 10,11,12,13:
                 ClickImage("buttons\advanced")
-            Case 13,14:
+            Case 14,15:
                 ClickImage("buttons\expert")
         }
     }

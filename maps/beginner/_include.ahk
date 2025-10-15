@@ -22,3 +22,4 @@
 #Include logs\main.ahk
 #Include tinkerton\main.ahk
 #Include spa_pits\main.ahk
+#Include three_mines_round\main.ahk
