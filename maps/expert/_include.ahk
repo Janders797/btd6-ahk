@@ -10,3 +10,4 @@
 #Include muddy_puddles\main.ahk
 #Include bloody_puddles\main.ahk
 #Include flooded_valley\main.ahk
+#Include tricky_tracks\main.ahk

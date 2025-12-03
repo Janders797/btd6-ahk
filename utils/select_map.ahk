@@ -8,7 +8,8 @@ MapSelection() {
         SelectMap(NextMedal[1], NextMedal[2])
     }
     else if mapSelect = "unlock" {
-        SelectNextMap()
+        NextUnlock := NextUnlockMap()
+        SelectMap(NextUnlock[1], NextUnlock[2])
     } else if MAP_LOCATIONS.Has(mapSelect) {
         SelectMap(MAP_LOCATIONS[mapSelect][1], MAP_LOCATIONS[mapSelect][2])
     } else if FileExist("img\events\" mapSelect) {
@@ -37,7 +38,7 @@ SelectRandomMap() {
         Case "advanced":
             SelectMap(10, Random(1, 21))
         Case "expert":
-            SelectMap(14, Random(1, 12))
+            SelectMap(14, Random(1, 13))
         Default:
             randomMap := ALL_MAPS[Random(1, ALL_MAPS.Length)]
             SelectMap(randomMap[1], randomMap[2])

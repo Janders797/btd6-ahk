@@ -101,7 +101,7 @@ FTDCNormal() {
         return
     }
     Upgrade("Ace", 0, 0, 1, true)       ; 203 -> 204
-    If difficulty ~= "deflation|half_cash" {
+    If difficulty ~= "deflation|half_cash|apopalypse" {
         return
     }
     Upgrade("Alch A", 1, 0, 0, true)      ; 420 -> 520
