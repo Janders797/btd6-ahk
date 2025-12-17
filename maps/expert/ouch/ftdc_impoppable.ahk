@@ -24,10 +24,10 @@ OuchImpoppableFTDC() {
     Upgrade("Ace", 1, 0, 3)             ; 000 -> 103
     Place("Alch")
     Upgrade("Alch", 3, 0, 0)            ; 000 -> 300
-    Place("Sniper A")
 
     StartGame()
 
+    Place("Sniper A", true)
     Place("Ben", true)
     Place("Druid", true)
     Place("Village B")

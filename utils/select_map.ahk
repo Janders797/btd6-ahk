@@ -88,7 +88,7 @@ GoToPage(page) {
                 ClickImage("buttons\intermediate")
             Case 10,11,12,13:
                 ClickImage("buttons\advanced")
-            Case 14,15:
+            Case 14,15,16:
                 ClickImage("buttons\expert")
         }
     }
