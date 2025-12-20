@@ -16,9 +16,12 @@ Place(tower, asap := false) {
             if SearchImage("buttons\close_place", "", 1570, 85, 1635, 150) {
                 break
             }
-            if CheckDefeat() or SearchImage("states\victory") {
+            if CheckDefeat() or SearchImage("states\victory") or CheckInstaMonkey() {
                 global defeated := true
                 LogMsg('Found defeat when placing ' tower '')
+                if detailedLogging or type ~= "mermonkey|desperado" {
+                    LogMsg('Make sure ' type ' hotkey is set to "' GetKeyName(RegExReplace(KEYS[type], "^\s*\{(.*)\}\s*$", "$1")) '"')
+                }
                 ScreenRecordDefeat()
                 break
             }
@@ -125,26 +128,46 @@ Remove(x, y, confirmx := 950, confirmy := 620) {
     Sleep(200)
 }
 
-GetRandom(ground_position, water_position) {
-    allTowers := [
-        "dart","boomer","bomb","tack","ice","glue", "desperado",
-        "sniper","sub","boat","ace","heli","mortar","dartling",
-        "wizard","super","ninja","alch","druid", "mermonkey",
-        "spike","village","engineer","beast"
-    ]
+GetRandom(ground_position := "", water_position := "") {
     found := false
-    for towerName in allTowers {
+    banned := bannedTowers.Has(difficulty) ? BannedTowers[difficulty] : []
+    allowedTowers := []
+
+    if (ground_position = "") {
+        for _, tower in nonWaterTowers
+            banned.Push(tower)
+    }
+
+    if (water_position = "") {
+        for _, tower in nonLandTowers
+            banned.Push(tower)
+    }
+
+    for _, tower in allTowers {
+        isBanned := false
+        for _, b in banned {
+            if (tower = b) {
+                isBanned := true
+                break
+            }
+        }
+        if !isBanned
+            allowedTowers.Push(tower)
+    }
+
+    for towerName in allowedTowers {
         if (towerName = trainingTower) {
             found := true
             break
         }
     }
+
     if (trainingTower != "" && found) {
         tower := trainingTower
     } else {
-        tower := allTowers[Random(1, allTowers.Length)]
+        tower := allowedTowers[Random(1, allowedTowers.Length)]
     }
-    if tower ~= "sub|boat" {
+    if tower ~= "ice|sub|boat|mermonkey" and water_position != "" {
         return [tower, water_position]
     }
     return [tower, ground_position]
@@ -389,3 +412,43 @@ AbilityTarget(tower) {
     Click(x,y)
     Sleep(100)
 }
+
+global allTowers := [
+        "dart","boomer","bomb","tack","ice","glue", "desperado",
+        "sniper","sub","boat","ace","heli","mortar","dartling",
+        "wizard","super","ninja","alch","druid", "mermonkey",
+        "farm", "spike","village","engineer","beast"
+    ]
+
+global bannedTowers := Map(
+    "deflation", ["farm"],
+    "primary", [
+        "sniper","sub","boat","ace","heli","mortar","dartling",
+        "wizard","super","ninja","alch","druid", "mermonkey",
+        "farm", "spike","village","engineer","beast"
+    ],
+    "military", [
+        "dart","boomer","bomb","tack","ice","glue", "desperado",
+        "wizard","super","ninja","alch","druid", "mermonkey",
+        "farm", "spike","village","engineer","beast"
+    ],
+    "magic", [
+        "dart","boomer","bomb","tack","ice","glue", "desperado",
+        "sniper","sub","boat","ace","heli","mortar","dartling",
+        "farm", "spike","village","engineer","beast"
+    ],
+    "chimps", [
+        "farm"
+    ],
+)
+
+global nonWaterTowers := [
+        "dart","boomer","bomb","tack","glue", "desperado",
+        "sniper","ace","heli","mortar","dartling",
+        "wizard","super","ninja","alch","druid",
+        "farm", "spike","village","engineer","beast"
+    ]
+
+global nonLandTowers := [
+        "sub","boat"
+    ]

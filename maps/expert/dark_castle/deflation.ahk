@@ -23,7 +23,7 @@ DarkCastleDeflation() {
     Upgrade("Alch", 4, 0, 1)        ; 000 -> 401
 
     Place("Random")
-    Upgrade("Random", 0, 2, 3)      ; 000 -> 023 (if enough money)
+    Upgrade("Random", 0, 2, 5)      ; 000 -> 025 (if enough money)
 
     StartGame()
 }

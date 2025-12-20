@@ -183,9 +183,7 @@ WaitForVictoryOrDefeat() {
             LogMsg("Defeat on round " currentRound)
             break
         }
-        CheckInstaMonkey()
-        CheckLevelUp()
-        CheckInGameMsg()
+        CheckInterrupt()
         UpdateRound()
         StartRoundAfterPause()
         Sleep(2000)
