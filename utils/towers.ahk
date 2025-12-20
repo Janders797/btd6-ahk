@@ -16,7 +16,7 @@ Place(tower, asap := false) {
             if SearchImage("buttons\close_place", "", 1570, 85, 1635, 150) {
                 break
             }
-            if CheckDefeat() or SearchImage("states\victory") {
+            if CheckDefeat() or SearchImage("states\victory") or CheckInstaMonkey() {
                 global defeated := true
                 LogMsg('Found defeat when placing ' tower '')
                 ScreenRecordDefeat()
