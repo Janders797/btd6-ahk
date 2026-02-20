@@ -28,6 +28,7 @@ Place(tower, asap := false) {
             CheckLevelUp()
             CheckInGameMsg()
             UpdateRound()
+            StartRoundAfterPause()
         }
     } else {
         SendEvent(KEYS[type])

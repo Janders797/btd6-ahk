@@ -76,5 +76,8 @@ IntermediatePrimary() {
         Upgrade("BoomerB", 0,0,1, true)
         Upgrade("BombA", 0,0,1, true)
         Upgrade("GlueA", 0,0,2, true)
+        WaitForRound(100)
+        Ability("etienne", 2, 2)
+        Ability("etienne", 1, 1)
     }
 }

@@ -72,6 +72,8 @@ FTDC() {
     */
 
     Switch difficulty {
+        Case "chimps":
+            EasyChimps()
         Case "primary":
             FTDCPrimary()
         Case "military":
@@ -112,7 +114,20 @@ FTDCNormal() {
     Upgrade("Village", 0, 1, 0, true)   ; 220 -> 230
 }
 
-FTDCPrimary() {
+FTDCPrimary() { 
+    if !TowerHasCoords("Dart A") {
+        TS["Dart A"][2] := TS["Psi"][2]
+    }
+    if !TowerHasCoords("Bomb A") {
+        TS["Bomb A"][2] := TS["Ace"][2]
+    }
+    if !TowerHasCoords("Bomb B") {
+        TS["Bomb B"][2] := TS["Village"][2]
+    }
+    if !TowerHasCoords("Dart B") {
+        TS["Dart B"][2] := TS["Alch A"][2]
+    }
+
     if TowerHasCoords("Dart D") {
         FTDCPrimary4()
     } else if TowerHasCoords("Dart C") {
@@ -356,4 +371,21 @@ FTDCMagic() {
         }
     }
 */
+}
+
+EasyChimps() {
+    
+    if !TowerHasCoords("Sauda") {
+        TS["Sauda"][2] := TS["Psi"][2]
+    }
+    if !TowerHasCoords("Sniper") {
+        TS["Sniper"][2] := TS["Alch A"][2]
+    }
+    if !TowerHasCoords("Mouse") {
+        TS["Mouse"][2] := TS["Sauda"][2]
+    }
+
+    UpdateMouseRest("Mouse")
+
+    BeginnerChimps()
 }

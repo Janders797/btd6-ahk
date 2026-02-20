@@ -19,3 +19,4 @@
 #Include last_resort\main.ahk
 #Include enchanted_glade\main.ahk
 #Include sunset_gulch\main.ahk
+#Include party_parade\main.ahk
