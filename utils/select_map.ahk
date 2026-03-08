@@ -106,9 +106,9 @@ CheckFastTrack() {
 }
 
 CheckDoubleCash() {
-    if SearchImage("buttons\double_cash") {
+    if SearchImage("buttons\double_cash") or SearchImage("buttons\double_cash_solo") {
         global double_cash := true
-    } else if SearchImage("buttons\double_cash_off") {
+    } else if SearchImage("buttons\double_cash_off") or SearchImage("buttons\double_cash_solo_off") {
         global double_cash := false
     } else double_cash := "unavailable"
 }
