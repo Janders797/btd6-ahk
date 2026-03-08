@@ -17,6 +17,7 @@ userUnlockTier := enableUnlockTier
 inFreeplay := false
 selectedMode := []
 lastMap := [1, 1]
+lastDifficulty := "easy"
 autoStart := "unknown"
 paused := ""
 windowName := "BloonsTD6"

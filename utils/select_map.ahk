@@ -6,8 +6,10 @@ MapSelection() {
     if mapSelect = "medals" {
         NextMedal := NextMedalMap()
         SelectMap(NextMedal[1], NextMedal[2])
-    }
-    else if mapSelect = "unlock" {
+    } else if mapSelect = "difficulty" {
+        NextMedal := NextDifficultyMap()
+        SelectMap(NextMedal[1], NextMedal[2])
+    } else if mapSelect = "unlock" {
         NextUnlock := NextUnlockMap()
         SelectMap(NextUnlock[1], NextUnlock[2])
     } else if MAP_LOCATIONS.Has(mapSelect) {
@@ -20,6 +22,7 @@ MapSelection() {
     LogMsg("Selected map: " MAPS[currentMap[1]][currentMap[2]][1])
     global lastMap := currentMap
     SelectDifficulty()
+    global lastDifficulty := difficulty
     CheckOwerwrite()
     Sleep(5000)
 }

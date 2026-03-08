@@ -125,8 +125,8 @@ NextUnlockMap() {
     global MAPS, currentMap, difficultyNames, lastMap
 
     currentMap := lastMap
-    startPage := currentMap[1]
-    startPos := currentMap[2]
+    startPage  := currentMap[1]
+    startPos   := currentMap[2]
     totalPages := MAPS.Length
 
     difficultyCheck := ["easy", "medium", "hard"]
@@ -134,16 +134,22 @@ NextUnlockMap() {
     loop totalPages {
         page := Mod(startPage + A_Index - 2, totalPages) + 1
 
+        GoToPage(page)
+
         loop MAPS[page].Length {
             pos := Mod(startPos + (A_Index - 2), MAPS[page].Length) + 1
             oldCurrentMap := currentMap
             currentMap[1] := page
             currentMap[2] := pos
 
-            if (!MapHas("easy"))
+            if (!MapHas("easy")) {
+                currentMap := oldCurrentMap
                 continue
+            }
 
             medalFound := false
+            LogMsg(MAPS[currentMap[1]][currentMap[2]][1] ' (Map ' pos ')', true)
+
             for diff in difficultyCheck {
                 if MedalEarned([page, pos], diff) {
                     medalFound := true
@@ -161,5 +167,68 @@ NextUnlockMap() {
         }
         startPos := 1
     }
+    return NextMap(currentMap)
+}
+
+NextDifficultyMap() {
+    global MAPS, currentMap, lastMap, lastDifficulty
+
+    totalPages := MAPS.Length
+
+    difficultyOrder := [
+        "easy", "primary", "deflation",
+        "medium", "military", "apopalypse", "reverse",
+        "hard", "magic", "double_hp", "half_cash",
+        "alternate", "impoppable", "chimps"
+    ]
+
+    startDiffIndex := 1
+    for i, diff in difficultyOrder {
+        if (diff = lastDifficulty) {
+            startDiffIndex := i
+            break
+        }
+    }
+
+    loop difficultyOrder.Length {
+        diffIndex := Mod(startDiffIndex + A_Index - 2, difficultyOrder.Length) + 1
+        diff := difficultyOrder[diffIndex]
+
+        if (diffIndex = startDiffIndex) {
+            startPage := lastMap[1]
+            startPos  := lastMap[2]
+        } else {
+            startPage := 1
+            startPos  := 1
+        }
+
+        loop totalPages {
+            page := Mod(startPage + A_Index - 2, totalPages) + 1
+
+            GoToPage(page)
+
+            loop MAPS[page].Length {
+                pos := Mod(startPos + (A_Index - 2), MAPS[page].Length) + 1
+                oldCurrentMap := currentMap
+                currentMap[1] := page
+                currentMap[2] := pos
+
+                LogMsg(MAPS[currentMap[1]][currentMap[2]][1] ' (Map ' pos ') - ' diff, true)
+
+                if MapHas(diff) && !MedalEarned([page, pos], diff) {
+                    if IsDifficultyPlayable([page, pos], diff) {
+                        currentMap := oldCurrentMap
+                        global userDifficulty := diff
+                        global lastDifficulty  := diff
+                        return [page, pos]
+                    }
+                }
+
+                currentMap := oldCurrentMap
+            }
+            startPos := 1
+        }
+    }
+
     return NextMap(currentMap)
 }
