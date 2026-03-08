@@ -22,3 +22,5 @@ enableUnlockTier := IniRead("config.ini", "settings", "enableUnlockTier", false)
 enableFreeplayInsta := IniRead("config.ini", "settings", "enableFreeplayInsta", false) == "true"
 
 trainingTower := IniRead("config.ini", "settings", "trainingTower", "none")
+
+buyHeroSettings := IniRead("config.ini", "settings", "buyHero", "true") == "true"

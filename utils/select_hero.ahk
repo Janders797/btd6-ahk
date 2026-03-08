@@ -32,6 +32,14 @@ ChangeHero(hero) {
     Click(103 + 151 * Mod(pos, 3), 222 + 192 * (pos // 3))
     Sleep(1000)
     ClickImage("hero\select")
+    if buyHeroSettings {
+        if ClickImage("hero\unlock") {
+            LogMsg("bought hero: " hero)
+            Sleep(2000)
+            Click(6, 4)
+            Sleep(2000)
+        }
+    }
     ClickImage("hero\back")
 
     if !CheckHero(hero) {
