@@ -26,7 +26,7 @@ Start() {
             Case "reward":
                 ClickImage("buttons\rewards_skip", 1500)
                 if !ClickImage("buttons\rewards_claimed", 1500) {
-                    Click(6, 4)
+                    Click(970, 1000)
                 }
         }
     }
@@ -118,6 +118,7 @@ InGame() {
     global fast_track := false
     global selectedMode := []
     global enableUnlockTier := userUnlockTier
+    global enableFreeplayInsta := userFreePlay
 }
 
 OpenBoxes() {
@@ -218,4 +219,8 @@ SetAutoStart(state) {
 
 EnableUpgrades() {
     global enableUnlockTier := true
+}
+
+EnableFreeplay() {
+    global enableFreeplayInsta := true
 }

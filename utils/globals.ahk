@@ -14,6 +14,7 @@ fast_track := false
 speed_adjust := false
 allowPowers := powerSettings
 userUnlockTier := enableUnlockTier
+userFreePlay := enableFreeplayInsta
 inFreeplay := false
 selectedMode := []
 lastMap := [1, 1]
@@ -31,7 +32,9 @@ states := [
     "event",
     "victory",
     "victory_menu",
-    "defeat"
+    "defeat",
+    "claim_event",
+    "reward"
 ]
 
 difficultyNames := Map(

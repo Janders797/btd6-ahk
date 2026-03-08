@@ -419,12 +419,6 @@ TowerHasType(towerName, towerMap := TS) {
 
     type := towerMap[towerName][1]
 
-    ; Make sure the type is a string
-    if Type(type) != "String" {
-        LogMsg(A_ThisFunc "() | false - first element in the tower array is a(n) " Type(type) " when it should be a string (type). tower: " towerName, true)
-        return false
-    }
-
     if (type = "") {
         LogMsg(A_ThisFunc "() | false - type is empty string. tower: " towerName, true)
         return false
