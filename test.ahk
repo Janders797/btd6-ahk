@@ -67,7 +67,9 @@ TestPlacements() {
     )
 
     for tower in TS {
-        Place(tower)
+        if TowerHasCoords(tower) and TowerHasType(tower) {
+            Place(tower)
+        }
     }
 
 }

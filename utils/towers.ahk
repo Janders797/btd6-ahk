@@ -404,6 +404,36 @@ TowerHasCoords(towerName, towerMap := TS) {
     return true
 }
 
+TowerHasType(towerName, towerMap := TS) {
+    ; Check if the passed tower name is in the tower Map
+    if !towerMap.Has(towerName) {
+        LogMsg(A_ThisFunc "() | false - tower not found in tower Map. tower: " towerName, true)
+        return false
+    }
+
+    ; Make sure the tower values are an array of at least 1 element (type)
+    if towerMap[towerName].Length < 1 {
+        LogMsg(A_ThisFunc "() | false - tower array has less than 1 element. it should contain at least the type. tower: " towerName, true)
+        return false
+    }
+
+    type := towerMap[towerName][1]
+
+    ; Make sure the type is a string
+    if Type(type) != "String" {
+        LogMsg(A_ThisFunc "() | false - first element in the tower array is a(n) " Type(type) " when it should be a string (type). tower: " towerName, true)
+        return false
+    }
+
+    if (type = "") {
+        LogMsg(A_ThisFunc "() | false - type is empty string. tower: " towerName, true)
+        return false
+    }
+
+    LogMsg(A_ThisFunc "() | true - tower: " towerName " has type: " type, true)
+    return true
+}
+
 AbilityTarget(tower) {
     if defeated {
         return
