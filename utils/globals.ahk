@@ -13,6 +13,7 @@ double_cash := false
 fast_track := false
 speed_adjust := false
 allowPowers := powerSettings
+userUnlockTier := enableUnlockTier
 inFreeplay := false
 selectedMode := []
 lastMap := [1, 1]

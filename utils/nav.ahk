@@ -117,6 +117,7 @@ InGame() {
     global inFreeplay := false
     global fast_track := false
     global selectedMode := []
+    global enableUnlockTier := userUnlockTier
 }
 
 OpenBoxes() {
@@ -213,4 +214,8 @@ SetAutoStart(state) {
         Sleep(1500)
     return
     }
+}
+
+EnableUpgrades() {
+    global enableUnlockTier := true
 }
