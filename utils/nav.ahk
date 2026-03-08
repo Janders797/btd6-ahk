@@ -21,6 +21,13 @@ Start() {
             Case "defeat":
                 ClickImage("buttons\home_defeat_1", 2000)
                 ClickImage("buttons\home_defeat_2", 2000)
+            Case "claim_event":
+                ClickImage("buttons\claim_event", 1500)
+            Case "reward":
+                ClickImage("buttons\rewards_skip", 1500)
+                if !ClickImage("buttons\rewards_claimed", 1500) {
+                    Click(6, 4)
+                }
         }
     }
     LogMsg("Script stopped because the game window wasn't active")
