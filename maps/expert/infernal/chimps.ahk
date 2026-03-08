@@ -44,7 +44,7 @@ InfernalChimps() {
     WaitForRound(35)
     Place("Spike A", true)
     Upgrade("Spike A", 1, 0, 2, true)      ; 000 -> 102
-    Targeting("Spike A", 3)                ; First -> Smart
+    Targeting("Spike A", 2)                ; Normal -> Smart
 
     WaitForRound(37)
     Place("Alch A", true)

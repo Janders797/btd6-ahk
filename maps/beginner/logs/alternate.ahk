@@ -2,9 +2,9 @@ LogsAlternate() {
     global TS := Map(
         "Quincy", ["hero", [641, 579]],
         "Ninja", ["ninja", [751, 677]],
-        "Alch", ["alch", [902, 746]],
-        "Village", ["village", [334, 929]],
-        "Mortar", ["mortar", [528, 1011]],
+        "Alch", ["alch", [902, 745]],
+        "Village", ["village", [120, 705]],
+        "Mortar", ["mortar", [260, 710]],
         "Spike", ["spike", [143, 843]]
     )
 

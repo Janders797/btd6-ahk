@@ -34,7 +34,7 @@ GlacialTrailEasy() {
 
     WaitForRound(31)
     Upgrade("Spike", 0, 0, 3, true)     ; 000 -> 003
-    Targeting("Spike", 3)               ; Normal -> Smart
+    Targeting("Spike", 2)               ; Normal -> Smart
 
     WaitForRound(35)
     Place("Heli")
