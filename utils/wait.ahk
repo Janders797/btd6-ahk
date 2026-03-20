@@ -191,18 +191,49 @@ WaitForVictoryOrDefeat() {
 }
 
 WaitForUpgrade(path) {
-    if defeated {
+    if defeated
         return
+
+    mx := mouseRest[1], my := mouseRest[2]
+    topY := 50, bottomY := 952
+    menuEdgeX := (menuside = "L") ? 425 : 1246
+
+    if !(topY < my && my < bottomY) {
+        MouseMove(mouseRest[1], mouseRest[2])
+        goto waitLoop
     }
-    if menuside = "L" {
-        MouseMove(max(mouseRest[1], 425), mouseRest[2])
-    } else {
-        MouseMove(min(mouseRest[1], 1246), mouseRest[2])
+
+    inMenuHorizontal := (menuside = "L" && mx < menuEdgeX) || (menuside = "R" && mx > menuEdgeX)
+    
+    if !inMenuHorizontal {
+        MouseMove(mouseRest[1], mouseRest[2])
+        goto waitLoop
     }
+
+    distHorizontal := Abs(mx - menuEdgeX)
+    distVerticalTop := Abs(my - topY)
+    distVerticalBottom := Abs(my - bottomY)
+
+    minDist := distHorizontal
+    targetX := menuEdgeX
+    targetY := my
+
+    if (distVerticalTop < minDist) {
+        minDist := distVerticalTop
+        targetX := mx
+        targetY := topY
+    }
+    if (distVerticalBottom < minDist) {
+        targetX := mx
+        targetY := bottomY
+    }
+
+    MouseMove(targetX, targetY)
+
+waitLoop:
     Loop {
-        if SearchUpgrade(path) {
+        if SearchUpgrade(path)
             break
-        }
         if CheckDefeat() {
             global defeated := true
             LogMsg("Found defeat instead of upgrade " path " on " toweropen)
