@@ -327,6 +327,7 @@ StartFreePlay() {
             Sleep(500)
             ClickImage("buttons\next")
             ClickImage("buttons\victory_freeplay", 2000)
+            ClickImage("buttons\victory_apopalypse_freeplay", 2000)
             CheckInGameMsg()
             Sleep(500)
             Send(KEYS["play"])                                              ; Resume Game
