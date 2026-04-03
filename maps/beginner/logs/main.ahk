@@ -10,7 +10,7 @@ LOGS_DATA := Map(
     "easy", [
         [LogsEasy, ""],
         ;[LogsAlchermistman, "obyn"],
-    ]
+    ],
     "deflation", [LogsDeflation, "gwendolin"],
     "hard", [LogsHard, ""],
     "alternate", [LogsAlternate, "quincy"],
