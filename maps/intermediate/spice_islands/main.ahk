@@ -1,7 +1,10 @@
 #Include easy.ahk
 #Include impoppable.ahk
+#Include alternate.ahk
 
 SPICE_ISLANDS_DATA := Map(
     "easy", [SpiceIslandsEasy, ""],
-    "impoppable", [SpiceIslandsImpoppable, "benjamin"],
+    "alternate", [
+        [SpiceIslandsAlternate, "sauda"],
+    ],
 )
