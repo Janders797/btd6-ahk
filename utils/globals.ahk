@@ -34,7 +34,8 @@ states := [
     "victory_menu",
     "defeat",
     "claim_event",
-    "reward"
+    "reward",
+    "login_not_now",
 ]
 
 difficultyNames := Map(

@@ -25,9 +25,11 @@ Start() {
                 ClickImage("buttons\claim_event", 1500)
             Case "reward":
                 ClickImage("buttons\rewards_skip", 1500)
-                if !ClickImage("buttons\rewards_claimed", 1500) {
+                if !ClickImage("buttons\rewards_claimed", 1500) and !ClickImage("buttons\login_not_now") {
                     Click(970, 1000)
                 }
+            Case "login_not_now":
+                ClickImage("buttons\login_not_now")
         }
     }
     LogMsg("Script stopped because the game window wasn't active")
@@ -37,6 +39,7 @@ HomeMenu() {
     CollectDailyReward()
     ; CollectAchievements()
     ClickImage("buttons\play_home")
+    ClickImage("buttons\unlock_maps")
 }
 
 CheckMenuState() {
@@ -134,20 +137,39 @@ OpenBoxes() {
 }
 
 CollectDailyReward(attempts := 3) {
-    chestImg := "buttons\chest"
+    chestImgs := [
+        "buttons\chest",            ; basic chest
+        ;"buttons\chest_birthday",   ; birthday cake
+        "buttons\chest_easter",     ; easter egg
+        ;"buttons\chest_fireworks",  ; fireworks
+        ;"buttons\chest_halloween",  ; coffin
+        ;"buttons\chest_holiday"     ; gift
+    ]
     closeBtn := "buttons\close_chest"
     closeAltBtn := "buttons\close_chestalt"
 
     loop attempts {
-        if SearchImage(chestImg) {
-            Click(x, y)
-            LogMsg("Collecting daily reward")
-            
-            loop {
-                Click()
-                Sleep(200)
-            } until ClickImage(closeBtn) || ClickImage(closeAltBtn)
+        foundChest := false
+
+        for _, chestImg in chestImgs {
+            if SearchImage(chestImg, "", 430, 490, 720, 780) {
+                Click(x, y)
+                LogMsg("Collecting daily reward")
+                foundChest := true
+
+                loop {
+                    Click()
+                    Sleep(200)
+                    ClickImage("buttons\login_not_now")
+                } until ClickImage(closeBtn) || ClickImage(closeAltBtn)
+
+                break
+            }
         }
+
+        if foundChest
+            break
+
         Sleep(500)
     }
 }
