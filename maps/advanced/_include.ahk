@@ -15,8 +15,8 @@
 #Include cornfield\main.ahk
 #Include underground\main.ahk
 #Include castle_revenge\main.ahk
-#Include ancient_portal\main.ahk
 #Include last_resort\main.ahk
 #Include enchanted_glade\main.ahk
 #Include sunset_gulch\main.ahk
 #Include party_parade\main.ahk
+#Include mushroom_grotto\main.ahk

@@ -48,53 +48,58 @@ global MAPS := [
     [
         ["Lost Crevasse", LOST_CREVASSE_DATA],
         ["Luminous Cove", LUMINOUS_COVE_DATA],
+        ["Ancient Portal", ANCIENT_PORTAL_DATA],
         ["Sulfur Springs", SULFUR_SPRINGS_DATA],
         ["Water Park", WATER_PARK_DATA],
         ["Polyphemus", POLYPHEMUS_DATA],
-        ["Covered Garden", COVERED_GARDEN_DATA],
     ],
 
     ; Page 7  - Intermediate
     [
+        ["Covered Garden", COVERED_GARDEN_DATA],
         ["Quarry", QUARRY_DATA],
         ["Quiet Street", QUIET_STREET_DATA],
         ["Bloonarius Prime", BLOONARIUS_PRIME_DATA],
         ["Balance", BALANCE_DATA],
         ["Encrypted", ENCRYPTED_DATA],
-        ["Bazaar", BAZAAR_DATA],
     ],
 
     ; Page 8  - Intermediate
     [
+        ["Bazaar", BAZAAR_DATA],
         ["Adora's Temple", ADORAS_TEMPLE_DATA],
         ["Spring Spring", SPRING_SRPING_DATA],
         ["KartsNDarts", KARTSNDARTS_DATA],
         ["Moon Landing", MOON_LANDING_DATA],
         ["Haunted", HAUNTED_DATA],
-        ["Downstream", DOWNSTREAM_DATA],
     ],
 
     ; Page 9  - Intermediate
     [
+        ["Downstream", DOWNSTREAM_DATA],
         ["Firing Range", FIRING_RANGE_DATA],
         ["Cracked", CRACKED_DATA],
         ["Streambed", STREAMBED_DATA],
         ["Chutes", CHUTES_DATA],
         ["Rake", RAKE_DATA],
+    ],
+
+    ; Page 10 - Intermediate
+    [
         ["Spice Islands", SPICE_ISLANDS_DATA],
     ],
 
-    ; Page 10 - Advanced
+    ; Page 11 - Advanced
     [
+        ["Mushroom Grotto", MUSHROOM_GROTTO_DATA],
         ["Party Parade", PARTY_PARADE_DATA],
         ["Sunset Gulch", SUNSET_GULCH_DATA],
         ["Enchanted Glade", ENCHANTED_GLADE_DATA],
         ["Last Resort", LAST_RESORT_DATA],
-        ["Ancient Portal", ANCIENT_PORTAL_DATA],
         ["Castle Revenge", CASTLE_REVENGE_DATA],
     ],
 
-    ; Page 11 - Advanced
+    ; Page 12 - Advanced
     [
         ["Dark Path", DARK_PATH_DATA],
         ["Erosion", EROSION_DATA],
@@ -104,7 +109,7 @@ global MAPS := [
         ["Mesa", MESA_DATA],
     ],
     
-    ; Page 12 - Advanced
+    ; Page 13 - Advanced
     [
         ["Geared", GEARED_DATA],
         ["Spillway", SPILLWAY_DATA],
@@ -114,7 +119,7 @@ global MAPS := [
         ["High Finance", HIGH_FINANCE_DATA],
     ],
 
-    ; Page 13 - Advanced
+    ; Page 14 - Advanced
     [
         ["Another Brick", ANOTHER_BRICK_DATA],
         ["Off the Coast", OFF_THE_COAST_DATA],
@@ -122,7 +127,7 @@ global MAPS := [
         ["Underground", UNDERGROUND_DATA],
     ],
 
-    ; Page 14 - Expert
+    ; Page 15 - Expert
     [
         ["Tricky Tracks", TRICKY_TRACKS_DATA],
         ["Glacial Trail", GLACIAL_TRAIL_DATA],
@@ -132,7 +137,7 @@ global MAPS := [
         ["Flooded Valley", FLOODED_VALLEY_DATA],
     ],
 
-    ; Page 15 - Expert
+    ; Page 16 - Expert
     [
         ["Infernal", INFERNAL_DATA],
         ["Bloody Puddles", BLOODY_PUDDLES_DATA],
@@ -142,10 +147,10 @@ global MAPS := [
         ["Muddy Puddles", MUDDY_PUDDLES_DATA],
     ],
     
-    ; Page 16 - Expert
+    ; Page 17 - Expert
     [
         ["#Ouch", OUCH_DATA],
-    ]
+    ],
 ]
 
 global ALL_MAPS := []

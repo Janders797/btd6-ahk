@@ -87,11 +87,11 @@ GoToPage(page) {
         Switch page {
             Case 1,2,3,4,5:
                 ClickImage("buttons\beginner")
-            Case 6,7,8,9:
+            Case 6,7,8,9,10:
                 ClickImage("buttons\intermediate")
-            Case 10,11,12,13:
+            Case 11,12,13,14:
                 ClickImage("buttons\advanced")
-            Case 14,15,16:
+            Case 15,16,17:
                 ClickImage("buttons\expert")
         }
     }
