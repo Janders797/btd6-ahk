@@ -438,12 +438,66 @@ AbilityTarget(tower) {
     Sleep(100)
 }
 
+Temple(tower, asap := false) {
+    if defeated {
+        return
+    }
+    Open(tower)
+    if asap {
+        Sleep(100)
+        WaitForUpgrade(1)
+    }
+    Send(KEYS["upgrade_1"])
+    UnlockTier(1, asap)
+    Sleep(500)
+    ClickImage("buttons\temple_do_it", 500)
+    Close()
+}
+
+Paragon(tower, path, cash := 0, asap := false) {
+    if defeated {
+        return
+    }
+
+    Open(tower)
+
+    if asap {
+        Sleep(100)
+        WaitForUpgrade(path, true)
+    }
+
+    Send(KEYS["upgrade_" path])
+    Sleep(500)
+
+    if (cash > 0) {
+        sliderStartX := 643
+        sliderEndX := 1277
+        sliderY := 675
+
+        cash := Max(0, Min(100, cash))
+        targetX := Round(sliderStartX + (sliderEndX - sliderStartX) * (cash / 100))
+
+        MouseMove(sliderStartX, sliderY)
+        Sleep(100)
+        Click("Down")
+        Sleep(100)
+        MouseMove(targetX, sliderY, 5)
+        Sleep(100)
+        Click("Up")
+        Sleep(200)
+    }
+
+    ClickImage("buttons\paragon_do_it", 500)
+    global toweropen := ""
+    global menuside := ""
+}
+
 global allTowers := [
-        "dart","boomer","bomb","tack","ice","glue", "desperado",
-        "sniper","sub","boat","ace","heli","mortar","dartling",
-        "wizard","super","ninja","alch","druid", "mermonkey",
-        "farm", "spike","village","engineer","beast"
-    ]
+    "dart","boomer","bomb","tack","ice","glue", "desperado",
+    "sniper","sub","boat","ace","heli","mortar","dartling",
+    "wizard","super","ninja","alch","druid", "mermonkey",
+    "farm", "spike","village","engineer","beast"
+]
 
 global bannedTowers := Map(
     "deflation", ["farm"],
@@ -468,12 +522,12 @@ global bannedTowers := Map(
 )
 
 global nonWaterTowers := [
-        "dart","boomer","bomb","tack","glue", "desperado",
-        "sniper","ace","heli","mortar","dartling",
-        "wizard","super","ninja","alch","druid",
-        "farm", "spike","village","engineer","beast"
-    ]
+    "dart","boomer","bomb","tack","glue", "desperado",
+    "sniper","ace","heli","mortar","dartling",
+    "wizard","super","ninja","alch","druid",
+    "farm", "spike","village","engineer","beast"
+]
 
 global nonLandTowers := [
-        "sub","boat"
-    ]
+    "sub","boat"
+]

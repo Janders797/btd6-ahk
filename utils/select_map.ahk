@@ -98,17 +98,17 @@ GoToPage(page) {
 }
 
 CheckFastTrack() {
-    if SearchImage("buttons\fast_track") {
+    if SearchImage("buttons\fast_track") or SearchImage("buttons\fast_track_3"){
         global fast_track := true
-    } else if SearchImage("buttons\fast_track_off") {
+    } else if SearchImage("buttons\fast_track_off") or SearchImage("buttons\fast_track_off_3") {
         global fast_track := false
     } else fast_track := "unavailable"
 }
 
 CheckDoubleCash() {
-    if SearchImage("buttons\double_cash") or SearchImage("buttons\double_cash_solo") {
+    if SearchImage("buttons\double_cash") or SearchImage("buttons\double_cash_solo") or SearchImage("buttons\double_cash_3") {
         global double_cash := true
-    } else if SearchImage("buttons\double_cash_off") or SearchImage("buttons\double_cash_solo_off") {
+    } else if SearchImage("buttons\double_cash_off") or SearchImage("buttons\double_cash_solo_off") or SearchImage("buttons\double_cash_off_3")  {
         global double_cash := false
     } else double_cash := "unavailable"
 }

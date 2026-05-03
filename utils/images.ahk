@@ -47,11 +47,13 @@ GetCurrentMapPage() {
     Sleep(5000)
 }
 
-SearchUpgrade(path) {
-    if SearchImage("upgrades\" path "R", "", 1450, (325+path*150), 1520, (349+path*150)) {
+SearchUpgrade(path, paragon := false) {
+    suffix := paragon ? "P" : ""
+
+    if SearchImage("upgrades\" path suffix "R", "", 1450, (325 + path * 150), 1520, (349 + path * 150)) {
         return true
     }
-    if SearchImage("upgrades\" path "L", "", 230, (325+path*150), 300, (349+path*150)) {
+    if SearchImage("upgrades\" path suffix "L", "", 230, (325 + path * 150), 300, (349 + path * 150)) {
         return true
     }
 }

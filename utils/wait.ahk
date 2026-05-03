@@ -190,7 +190,7 @@ WaitForVictoryOrDefeat() {
     }
 }
 
-WaitForUpgrade(path) {
+WaitForUpgrade(path, paragon := false) {
     if defeated
         return
 
@@ -204,7 +204,7 @@ WaitForUpgrade(path) {
     }
 
     inMenuHorizontal := (menuside = "L" && mx < menuEdgeX) || (menuside = "R" && mx > menuEdgeX)
-    
+
     if !inMenuHorizontal {
         MouseMove(mouseRest[1], mouseRest[2])
         goto waitLoop
@@ -232,7 +232,7 @@ WaitForUpgrade(path) {
 
 waitLoop:
     Loop {
-        if SearchUpgrade(path)
+        if SearchUpgrade(path, paragon)
             break
         if CheckDefeat() {
             global defeated := true
