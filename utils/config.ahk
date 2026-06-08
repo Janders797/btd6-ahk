@@ -4,6 +4,7 @@ mapCategory := IniRead("config.ini", "settings", "mapCategory", "expert")
 overwriteSave := IniRead("config.ini", "settings", "overwriteSave", false) == "true"
 
 logging := IniRead("config.ini", "settings", "logging", false) == "true"
+discordWebhook := IniRead("config.ini", "settings", "discordWebhook", "")
 logFile := IniRead("config.ini", "settings", "logFile", "logs\" FormatTime(, "yyyyMMdd-HHmmss") ".log")
 detailedLogging := IniRead("config.ini", "settings", "detailedLogging", false) == "true"
 

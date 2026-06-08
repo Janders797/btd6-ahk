@@ -13,7 +13,25 @@ LogMsg(msg, detailedMsg := false) {
             msg := msg VictoryDefeatText()
         }
 
-        FileAppend("[" FormatTime(, "yyyy-MM-ddTHH:mm:ss") "] " msg "`n", logFile)
+        if (discordWebhook != "") {
+            SendDiscordWebhook(discordWebhook, "[" FormatTime(, "yyyy-MM-ddTHH:mm:ss") "] " msg)
+        } else {
+            FileAppend("[" FormatTime(, "yyyy-MM-ddTHH:mm:ss") "] " msg "`n", logFile)
+        }
+    }
+}
+
+SendDiscordWebhook(url, message) {
+    message := StrReplace(message, '"', '\"')
+    message := StrReplace(message, "`n", "\n")
+    message := StrReplace(message, "`r", "")
+    
+    try {
+        req := ComObject("WinHttp.WinHttpRequest.5.1")
+        req.Open("POST", url, false)
+        req.SetRequestHeader("Content-Type", "application/json")
+        body := '{ "content": "' message '" }'
+        req.Send(body)
     }
 }
 
