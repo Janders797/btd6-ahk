@@ -3,44 +3,45 @@ global MAPS := [
     [
         ["Monkey Meadow", MONKEY_MEADOW_DATA],
         ["In the Loop", IN_THE_LOOP_DATA],
+        ["Skull Tweak", SKULL_TWEAK_DATA],
         ["Three Mines 'Round", THREE_MINES_ROUND_DATA],
         ["Spa Pits", SPA_PITS_DATA],
         ["Tinkerton", TINKERTON_DATA],
-        ["Tree Stump", TREE_STUMP_DATA],
     ],
     
     ; Page 2  - Beginner 
     [
+        ["Tree Stump", TREE_STUMP_DATA],
         ["Town Center", TOWN_CENTER_DATA],
         ["Middle of the road", MIDDLE_OF_THE_ROAD_DATA],
         ["One Two Tree", ONE_TWO_TREE_DATA],
         ["Scrapyard", SCRAPYARD_DATA],
         ["The Cabin", THE_CABIN_DATA],
-        ["Resort", RESORT_DATA],
     ],
     
     ; Page 3  - Beginner 
     [
+        ["Resort", RESORT_DATA],
         ["Skates", SKATES_DATA],
         ["Lotus Island", LOTUS_ISLAND_DATA],
         ["Candy Falls", CANDY_FALLS_DATA],
         ["Winter Park", WINTER_PARK_DATA],
         ["Carved", CARVED_DATA],
-        ["Park Path", PARK_PATH_DATA],
     ],
     
     ; Page 4  - Beginner 
     [
+        ["Park Path", PARK_PATH_DATA],
         ["Alpine Run", ALPINE_RUN_DATA],
         ["Frozen Over", FROZEN_OVER_DATA],
         ["Cubism", CUBISM_DATA],
         ["Four Circles", FOUR_CIRCLES_DATA],
         ["Hedge", HEDGE_DATA],
-        ["End of the Road", END_OF_THE_ROAD_DATA],
     ],
     
     ; Page 5  - Beginner 
     [
+        ["End of the Road", END_OF_THE_ROAD_DATA],
         ["Logs", LOGS_DATA],
     ],
 
