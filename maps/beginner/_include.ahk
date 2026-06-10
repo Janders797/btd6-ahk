@@ -23,3 +23,4 @@
 #Include tinkerton\main.ahk
 #Include spa_pits\main.ahk
 #Include three_mines_round\main.ahk
+#Include skull_tweak\main.ahk
